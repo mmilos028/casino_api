@@ -1,0 +1,32 @@
+<html>
+<head>
+
+</head>
+<body>
+{{ user.username }}
+<br />
+{{ country.name }}
+<br /><br />
+User deposit wallets:
+<br />
+{% for wallet in user_deposit_wallets %}
+    <br />
+    {{ wallet.getUserId() }}
+    {{ wallet.getBalance() }}
+    {{ wallet.getCurrency() }}
+{% else %}
+    No wallets for user have been found.
+{% endfor %}
+<br /><br />
+User withdraw wallets:
+<br />
+{% for wallet in user_withdraw_wallets %}
+    <br />
+    {{ wallet.getUserId() }}
+    {{ wallet.getBalance() }}
+    {{ wallet.getCurrency() }}
+{% else %}
+    No wallets for user have been found.
+{% endfor %}
+</body>
+</html>
